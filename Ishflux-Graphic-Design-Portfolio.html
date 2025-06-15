@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishflux - Graphic Designer Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#D72638',secondary:'#1A1A1A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Open Sans', sans-serif;
+}
+.font-bebas {
+font-family: 'Bebas Neue', sans-serif;
+}
+.font-montserrat {
+font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%), url('https://readdy.ai/api/search-image?query=modern%2520graphic%2520design%2520portfolio%2520showcase%2520with%2520red%2520elements%252C%2520clean%2520white%2520background%2520on%2520the%2520left%2520side%2520fading%2520to%2520a%2520creative%2520display%2520of%2520design%2520work%2520on%2520the%2520right%252C%2520featuring%2520posters%2520and%2520branding%2520materials%2520in%2520red%2520and%2520black%2520colors%252C%2520professional%2520high-end%2520photography%2520style&width=1200&height=800&seq=hero1&orientation=landscape');
+background-size: cover;
+background-position: center right;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #D72638;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.service-card:hover {
+transform: translateY(-5px);
+}
+.portfolio-item {
+overflow: hidden;
+}
+.portfolio-item img {
+transition: transform 0.5s ease;
+}
+.portfolio-item:hover img {
+transform: scale(1.05);
+}
+.portfolio-overlay {
+background: rgba(215, 38, 56, 0.9);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.portfolio-item:hover .portfolio-overlay {
+opacity: 1;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #D72638;
+}
+.custom-checkbox {
+appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #D72638;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox:checked {
+background-color: #D72638;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+top: 2px;
+left: 6px;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<nav class="fixed w-full z-50 bg-white bg-opacity-95 shadow-sm">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="text-4xl font-['Dancing_Script'] text-primary hover:opacity-90 transition-opacity">Ishflux</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#services" class="nav-link font-montserrat font-medium text-gray-800 hover:text-primary transition">Services</a>
+<a href="#portfolio" class="nav-link font-montserrat font-medium text-gray-800 hover:text-primary transition">Portfolio</a>
+<a href="#about" class="nav-link font-montserrat font-medium text-gray-800 hover:text-primary transition">About</a>
+<a href="#contact" class="bg-primary text-white px-6 py-2 !rounded-button font-montserrat font-medium hover:bg-opacity-90 transition whitespace-nowrap">Get in Touch</a>
+</div>
+<div class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg text-gray-800"></i>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+<div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+<a href="#services" class="font-montserrat font-medium text-gray-800 hover:text-primary transition py-2">Services</a>
+<a href="#portfolio" class="font-montserrat font-medium text-gray-800 hover:text-primary transition py-2">Portfolio</a>
+<a href="#about" class="font-montserrat font-medium text-gray-800 hover:text-primary transition py-2">About</a>
+<a href="#contact" class="bg-primary text-white px-6 py-2 !rounded-button font-montserrat font-medium hover:bg-opacity-90 transition text-center whitespace-nowrap">Get in Touch</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section min-h-screen flex items-center pt-16">
+<div class="container mx-auto px-6 w-full">
+<div class="max-w-xl">
+<h1 class="font-bebas text-5xl md:text-7xl leading-tight mb-4">Hi, I'm Ishflux — <span class="text-primary">I create graphic designs that speak.</span></h1>
+<div class="w-24 h-1 bg-primary mb-6"></div>
+<p class="text-lg md:text-xl font-light mb-8">From flyers to logos, I help brands stand out through bold, clean visual storytelling.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#portfolio" class="bg-primary text-white px-8 py-3 !rounded-button font-montserrat font-medium hover:bg-opacity-90 transition whitespace-nowrap">View My Work</a>
+<a href="#contact" class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-montserrat font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">Let's Talk</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-bebas text-4xl md:text-5xl mb-3">What I Create <span class="text-primary">→</span></h2>
+<p class="max-w-2xl mx-auto text-gray-600">Specialized design services tailored to elevate your brand's visual presence</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Service 1 -->
+<div class="bg-white p-8 rounded shadow-md service-card transition duration-300 hover:shadow-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-layout-4-line ri-xl text-primary"></i>
+</div>
+<h3 class="font-montserrat font-bold text-xl mb-3">Flyer Design</h3>
+<p class="text-gray-600">Eye-catching promotional materials that command attention and drive action.</p>
+</div>
+<!-- Service 2 -->
+<div class="bg-white p-8 rounded shadow-md service-card transition duration-300 hover:shadow-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-pantone-line ri-xl text-primary"></i>
+</div>
+<h3 class="font-montserrat font-bold text-xl mb-3">Branding & Logo Identity</h3>
+<p class="text-gray-600">Distinctive visual identities that capture your brand's essence and values.</p>
+</div>
+<!-- Service 3 -->
+<div class="bg-white p-8 rounded shadow-md service-card transition duration-300 hover:shadow-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-instagram-line ri-xl text-primary"></i>
+</div>
+<h3 class="font-montserrat font-bold text-xl mb-3">Social Media Creatives</h3>
+<p class="text-gray-600">Engaging visual content that boosts your presence across digital platforms.</p>
+</div>
+<!-- Service 4 -->
+<div class="bg-white p-8 rounded shadow-md service-card transition duration-300 hover:shadow-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-box-3-line ri-xl text-primary"></i>
+</div>
+<h3 class="font-montserrat font-bold text-xl mb-3">Print & Packaging</h3>
+<p class="text-gray-600">Tangible brand experiences through thoughtfully designed physical materials.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-bebas text-4xl md:text-5xl mb-3">Selected Work</h2>
+<p class="max-w-2xl mx-auto text-gray-600">A curated collection of my most impactful design projects</p>
+</div>
+<!-- Portfolio Filter -->
+<div class="flex flex-wrap justify-center mb-12 gap-2">
+<button class="filter-btn active bg-primary text-white px-6 py-2 !rounded-full font-montserrat font-medium transition whitespace-nowrap" data-filter="all">All Work</button>
+<button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 !rounded-full font-montserrat font-medium transition hover:bg-gray-300 whitespace-nowrap" data-filter="branding">Branding</button>
+<button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 !rounded-full font-montserrat font-medium transition hover:bg-gray-300 whitespace-nowrap" data-filter="print">Print</button>
+<button class="filter-btn bg-gray-200 text-gray-800 px-6 py-2 !rounded-full font-montserrat font-medium transition hover:bg-gray-300 whitespace-nowrap" data-filter="digital">Digital</button>
+</div>
+<!-- Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-item rounded overflow-hidden shadow-md group" data-category="print">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%2520door%2520hanger%2520design%2520for%2520home%2520services%2520with%2520red%2520and%2520black%2520color%2520scheme%252C%2520clean%2520typography%252C%2520professional%2520product%2520photography%2520on%2520white%2520background%252C%2520high-end%2520commercial%2520photography%2520style&width=600&height=450&seq=port1&orientation=landscape" alt="Door Hanger Design" class="w-full h-72 object-cover object-top">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+<h3 class="font-montserrat font-bold text-xl">Door Hanger Design</h3>
+<p class="text-sm">Created for local home services with high visibility impact</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-montserrat font-bold text-xl mb-2">Door Hanger Design</h3>
+<p class="text-gray-600 text-sm">Created for local home services with high visibility impact</p>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-item rounded overflow-hidden shadow-md group" data-category="branding">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%2520brand%2520identity%2520design%2520for%2520a%2520coffee%2520shop%2520featuring%2520logo%252C%2520business%2520cards%252C%2520and%2520packaging%2520with%2520red%2520and%2520black%2520color%2520scheme%252C%2520clean%2520typography%252C%2520professional%2520product%2520photography%2520on%2520white%2520background%252C%2520high-end%2520commercial%2520photography%2520style&width=600&height=450&seq=port2&orientation=landscape" alt="Coffee Shop Branding" class="w-full h-72 object-cover object-top">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+<h3 class="font-montserrat font-bold text-xl">Artisan Coffee Branding</h3>
+<p class="text-sm">Complete identity system for boutique coffee roaster</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-montserrat font-bold text-xl mb-2">Artisan Coffee Branding</h3>
+<p class="text-gray-600 text-sm">Complete identity system for boutique coffee roaster</p>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-item rounded overflow-hidden shadow-md group" data-category="digital">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%2520social%2520media%2520campaign%2520design%2520with%2520multiple%2520instagram%2520posts%2520featuring%2520red%2520and%2520black%2520color%2520scheme%252C%2520clean%2520typography%252C%2520professional%2520product%2520photography%2520on%2520white%2520background%252C%2520high-end%2520commercial%2520photography%2520style&width=600&height=450&seq=port3&orientation=landscape" alt="Social Media Campaign" class="w-full h-72 object-cover object-top">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+<h3 class="font-montserrat font-bold text-xl">Fashion Social Campaign</h3>
+<p class="text-sm">Series of coordinated posts for seasonal collection launch</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-montserrat font-bold text-xl mb-2">Fashion Social Campaign</h3>
+<p class="text-gray-600 text-sm">Series of coordinated posts for seasonal collection launch</p>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-item rounded overflow-hidden shadow-md group" data-category="print">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%2520event%2520poster%2520design%2520for%2520a%2520music%2520festival%2520with%2520red%2520and%2520black%2520color%2520scheme%252C%2520bold%2520typography%252C%2520professional%2520product%2520photography%2520on%2520white%2520background%252C%2520high-end%2520commercial%2520photography%2520style&width=600&height=450&seq=port4&orientation=landscape" alt="Event Poster" class="w-full h-72 object-cover object-top">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+<h3 class="font-montserrat font-bold text-xl">Music Festival Poster</h3>
+<p class="text-sm">Bold promotional design for annual urban music event</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-montserrat font-bold text-xl mb-2">Music Festival Poster</h3>
+<p class="text-gray-600 text-sm">Bold promotional design for annual urban music event</p>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-item rounded overflow-hidden shadow-md group" data-category="branding">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%2520packaging%2520design%2520for%2520a%2520cosmetic%2520product%2520with%2520red%2520and%2520black%2520color%2520scheme%252C%2520minimalist%2520typography%252C%2520professional%2520product%2520photography%2520on%2520white%2520background%252C%2520high-end%2520commercial%2520photography%2520style&width=600&height=450&seq=port5&orientation=landscape" alt="Cosmetic Packaging" class="w-full h-72 object-cover object-top">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+<h3 class="font-montserrat font-bold text-xl">Luxury Skincare Packaging</h3>
+<p class="text-sm">Elegant product line design for premium beauty brand</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-montserrat font-bold text-xl mb-2">Luxury Skincare Packaging</h3>
+<p class="text-gray-600 text-sm">Elegant product line design for premium beauty brand</p>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-item rounded overflow-hidden shadow-md group" data-category="digital">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%2520website%2520design%2520mockup%2520for%2520a%2520restaurant%2520with%2520red%2520and%2520black%2520color%2520scheme%252C%2520clean%2520typography%252C%2520professional%2520product%2520photography%2520on%2520white%2520background%252C%2520high-end%2520commercial%2520photography%2520style&width=600&height=450&seq=port6&orientation=landscape" alt="Website Design" class="w-full h-72 object-cover object-top">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 text-white">
+<h3 class="font-montserrat font-bold text-xl">Restaurant Website Design</h3>
+<p class="text-sm">Responsive web experience for upscale dining establishment</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-montserrat font-bold text-xl mb-2">Restaurant Website Design</h3>
+<p class="text-gray-600 text-sm">Responsive web experience for upscale dining establishment</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#contact" class="inline-block border-2 border-primary text-primary px-8 py-3 !rounded-button font-montserrat font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">Discuss Your Project</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="font-bebas text-4xl md:text-5xl mb-6">Meet the Designer</h2>
+<div class="w-16 h-1 bg-primary mx-auto mb-8"></div>
+<p class="text-lg mb-6">I'm Ishflux, a graphic designer passionate about turning ideas into impactful visuals. My design approach combines structure, creativity, and personality — helping businesses communicate through strong visuals. I specialize in modern, clean layouts with a bold twist.</p>
+<p class="text-lg mb-8">With over 8 years of experience working with clients across industries, I've developed a keen eye for what makes design not just beautiful, but effective. Every project begins with understanding your unique needs and goals, ensuring the final product isn't just visually striking, but strategically sound.</p>
+<a href="#contact" class="inline-block bg-primary text-white px-8 py-3 !rounded-button font-montserrat font-medium hover:bg-opacity-90 transition whitespace-nowrap">Get in Touch</a>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-bebas text-4xl md:text-5xl mb-3">Client Feedback</h2>
+<p class="max-w-2xl mx-auto text-gray-600">What clients are saying about working with me</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded shadow-md">
+<div class="flex mb-6">
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+</div>
+<p class="text-gray-600 mb-6">"Ishflux transformed our brand identity with a design that perfectly captures our company's essence. The process was collaborative and the results exceeded our expectations."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<span class="font-montserrat font-bold text-primary">JM</span>
+</div>
+<div>
+<h4 class="font-montserrat font-bold">Jessica Martinez</h4>
+<p class="text-gray-600 text-sm">Founder, Bloom Botanicals</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded shadow-md">
+<div class="flex mb-6">
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+</div>
+<p class="text-gray-600 mb-6">"The event posters Ishflux created for our music festival were absolutely stunning. They captured the vibe perfectly and helped us sell out weeks in advance."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<span class="font-montserrat font-bold text-primary">DT</span>
+</div>
+<div>
+<h4 class="font-montserrat font-bold">David Thompson</h4>
+<p class="text-gray-600 text-sm">Event Director, Urban Beats Festival</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded shadow-md">
+<div class="flex mb-6">
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+</div>
+<p class="text-gray-600 mb-6">"Working with Ishflux on our packaging redesign was a game-changer. Our products now stand out on shelves, and we've seen a significant increase in sales."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+<span class="font-montserrat font-bold text-primary">AK</span>
+</div>
+<div>
+<h4 class="font-montserrat font-bold">Alexandra Kim</h4>
+<p class="text-gray-600 text-sm">Marketing Director, Glow Cosmetics</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-bebas text-4xl md:text-5xl mb-3">Let's Work Together</h2>
+<p class="max-w-2xl mx-auto text-gray-600">Have a project in mind? Get in touch and let's create something amazing.</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-5">
+<div class="lg:col-span-2 bg-primary p-8 text-white">
+<h3 class="font-montserrat font-bold text-2xl mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-montserrat font-bold mb-1">Email</h4>
+<p>hello@ishflux.design</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center mr-4">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-montserrat font-bold mb-1">Phone</h4>
+<p>+1 (555) 123-4567</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center mr-4">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-montserrat font-bold mb-1">Location</h4>
+<p>San Francisco, California</p>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<h4 class="font-montserrat font-bold mb-4">Follow Me</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-behance-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-dribbble-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3 p-8">
+<form id="contact-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block font-montserrat font-medium mb-2">Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-sm" placeholder="Your name">
+</div>
+<div>
+<label for="email" class="block font-montserrat font-medium mb-2">Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-sm" placeholder="Your email">
+</div>
+</div>
+<div class="mb-6">
+<label for="subject" class="block font-montserrat font-medium mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-sm" placeholder="Project type">
+</div>
+<div class="mb-6">
+<label for="message" class="block font-montserrat font-medium mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary text-sm" placeholder="Tell me about your project"></textarea>
+</div>
+<div class="flex items-center mb-6">
+<input type="checkbox" id="newsletter" class="custom-checkbox mr-3">
+<label for="newsletter" class="text-gray-600 text-sm">Subscribe to my newsletter for design tips and updates</label>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button font-montserrat font-medium hover:bg-opacity-90 transition whitespace-nowrap">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-8 md:mb-0">
+<a href="#" class="text-4xl font-['Dancing_Script'] text-white mb-4 inline-block hover:opacity-90 transition-opacity">Ishflux</a>
+<p class="text-gray-400 max-w-md">Creating bold, clean visual designs that help brands stand out and communicate effectively.</p>
+</div>
+<div class="flex flex-col items-center md:items-end">
+<div class="flex space-x-4 mb-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-behance-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-dribbble-line"></i>
+</a>
+</div>
+<p class="text-gray-400 text-sm">© 2025 Ishflux. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+});
+});
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+return;
+}
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="portfolio-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => {
+btn.classList.remove('active', 'bg-primary', 'text-white');
+btn.classList.add('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+});
+// Add active class to clicked button
+this.classList.add('active', 'bg-primary', 'text-white');
+this.classList.remove('bg-gray-200', 'text-gray-800', 'hover:bg-gray-300');
+const filter = this.getAttribute('data-filter');
+portfolioItems.forEach(item => {
+if (filter === 'all' || item.getAttribute('data-category') === filter) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+});
+</script>
+<script id="form-validation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+let isValid = true;
+// Simple validation
+if (!name) {
+isValid = false;
+document.getElementById('name').classList.add('border-red-500');
+} else {
+document.getElementById('name').classList.remove('border-red-500');
+}
+if (!email || !email.includes('@')) {
+isValid = false;
+document.getElementById('email').classList.add('border-red-500');
+} else {
+document.getElementById('email').classList.remove('border-red-500');
+}
+if (!subject) {
+isValid = false;
+document.getElementById('subject').classList.add('border-red-500');
+} else {
+document.getElementById('subject').classList.remove('border-red-500');
+}
+if (!message) {
+isValid = false;
+document.getElementById('message').classList.add('border-red-500');
+} else {
+document.getElementById('message').classList.remove('border-red-500');
+}
+if (isValid) {
+// In a real application, you would send the form data to a server
+alert('Thank you for your message! I will get back to you soon.');
+contactForm.reset();
+}
+});
+});
+</script>
+</body>
+</html>
